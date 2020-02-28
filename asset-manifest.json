@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/BeelCleanProject/static/css/main.e7c3ef33.chunk.css",
+    "main.js": "/BeelCleanProject/static/js/main.d2552560.chunk.js",
+    "main.js.map": "/BeelCleanProject/static/js/main.d2552560.chunk.js.map",
+    "runtime-main.js": "/BeelCleanProject/static/js/runtime-main.6ad2ed54.js",
+    "runtime-main.js.map": "/BeelCleanProject/static/js/runtime-main.6ad2ed54.js.map",
+    "static/css/2.8f657878.chunk.css": "/BeelCleanProject/static/css/2.8f657878.chunk.css",
+    "static/js/2.61455ddd.chunk.js": "/BeelCleanProject/static/js/2.61455ddd.chunk.js",
+    "static/js/2.61455ddd.chunk.js.map": "/BeelCleanProject/static/js/2.61455ddd.chunk.js.map",
+    "index.html": "/BeelCleanProject/index.html",
+    "precache-manifest.599a5d40b1f4df6c6034ad511840eb0e.js": "/BeelCleanProject/precache-manifest.599a5d40b1f4df6c6034ad511840eb0e.js",
+    "service-worker.js": "/BeelCleanProject/service-worker.js",
+    "static/css/2.8f657878.chunk.css.map": "/BeelCleanProject/static/css/2.8f657878.chunk.css.map",
+    "static/css/main.e7c3ef33.chunk.css.map": "/BeelCleanProject/static/css/main.e7c3ef33.chunk.css.map",
+    "static/js/2.61455ddd.chunk.js.LICENSE.txt": "/BeelCleanProject/static/js/2.61455ddd.chunk.js.LICENSE.txt",
+    "static/media/Logo.jpg": "/BeelCleanProject/static/media/Logo.8ded71ca.jpg",
+    "static/media/MainPicture.JPG": "/BeelCleanProject/static/media/MainPicture.fa0f94c9.JPG"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6ad2ed54.js",
+    "static/css/2.8f657878.chunk.css",
+    "static/js/2.61455ddd.chunk.js",
+    "static/css/main.e7c3ef33.chunk.css",
+    "static/js/main.d2552560.chunk.js"
+  ]
+}
