@@ -1,0 +1,38 @@
+{
+	"analytics-uuid": "50b9f695-9258-4e29-98b2-2cec827a25bc",
+	"motd": {
+		"minVersion": "3.0.5"
+	},
+	"motd.fetched": 1582100342805,
+	"usage": false,
+	"user": {
+		"iss": "accounts.google.com",
+		"azp": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"aud": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"sub": "106223698169848763920",
+		"email": "mirza.dizdarevic9@gmail.com",
+		"email_verified": true,
+		"at_hash": "6r4_ljyvePeq8aRo-hUlwQ",
+		"iat": 1582100359,
+		"exp": 1582103959
+	},
+	"tokens": {
+		"expires_at": 1582103996092,
+		"refresh_token": "1//09C9Z7h7VgBDDCgYIARAAGAkSNwF-L9IroCgXxyxJw0gM2r8F98f6_XKQh-z8XOapowcJwhNXpxBIerbA54vtunoC95PWbJNg55Q",
+		"scopes": [
+			"email",
+			"https://www.googleapis.com/auth/cloud-platform",
+			"https://www.googleapis.com/auth/cloudplatformprojects.readonly",
+			"https://www.googleapis.com/auth/firebase",
+			"openid"
+		],
+		"access_token": "ya29.a0Adw1xeVHDmGNHEmJ_sFI9sgGz1Eynp0gJsUnZbO7aa2Ugedm2j4MdMp4RmVIgw1isoJyn75UC9iopuqg0gVrToyDhAuAJaecWfeDNkqTm336v1S1qIY_02UQYwk2wh2qBOyU1_DKH6PxRrELuf_lqlXSndRDo3WICqKXLyNQKaQ",
+		"expires_in": 3599,
+		"scope": "openid https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase",
+		"token_type": "Bearer",
+		"id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijc2MmZhNjM3YWY5NTM1OTBkYjhiYjhhNjM2YmYxMWQ0MzYwYWJjOTgiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTA2MjIzNjk4MTY5ODQ4NzYzOTIwIiwiZW1haWwiOiJtaXJ6YS5kaXpkYXJldmljOUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6IlExWUc1N2M0bEMxbE5ieXF6TWNYSnciLCJpYXQiOjE1ODIxMDAzOTcsImV4cCI6MTU4MjEwMzk5N30.hDHqca6KRTz7ZGsQg-DfklYVsYpMLd7Os1TP4A9oVwkKeNcGJTAWZdjT3zkBxxFFrizoFX88bzB5OLf-IwgpbvvIN9PM6Qp8Er3Orrvo84EwDvA86ix8js0YLO6G2YVRHyVWzUGwBGDCLXkhpCd9HZErjR34XOZJmNkoe9ENDq67rCYS4471tUHcx8jNSH4_VCOfHemmWNa_jyf0DB4PDmZU88hRcUtqlAnyCWH7WzOSk_bBL3DJ58bHBGxhTCOmEobcNjy33RQq0N2C2C3bjyJ6ufT_zDNfV0JWHI8UDlVRnOw4R_qXpPokr0EdXKDTwcVbBwPxFKbvywCH4JCVCg"
+	},
+	"activeProjects": {
+		"C:\\Users\\Mirza\\Downloads": "beelclean-656cf"
+	}
+}

@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Quiz</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/font-awesome-4.7.0\font-awesome-4.7.0\css\font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+  <body>
+    <br><br>
+
+    <!-- Glavni meni i Non Invasive Quiz -->
+
+    <div class="container col-lg-6" id="GlavniMeni">
+      <div class="container">
+        <div class='row sm-flex-center'>
+            <div class="col-md-6 middle NewColor">
+              <p style="color: #2b96cc;font-size: 30px;">Discover the Class</p><br>
+              <p style="color: #2b96cc;font-size: 20px;">Choose one of the <br> following devices</p>
+            </div>
+            <div class="col-md-6 middle pull-right"><br>
+                <div class="hidden">
+                    <ul>
+                      <i class="fa fa-arrow-circle-o-right" style="color: #2b96cc;" aria-hidden="true"><button type="button" class="btn" style="color: #2b96cc;" id="NonInvasive" onclick="ShowNonInvasive()" name="button">Non Invasive</button></i>
+                      <i class="fa fa-arrow-circle-o-right" style="color: #2b96cc;" aria-hidden="true"><button type="button" class="btn" style="color: #2b96cc;" id="invasive" onclick="ShowInvasive()" name="button">Invasive</button></i>
+                      <i class="fa fa-arrow-circle-o-right" style="color: #2b96cc;" aria-hidden="true"><button type="button" class="btn" style="color: #2b96cc;"id="activeDevices" onclick="ShowActiveDevices()" name="button">Active Devices</button></i>
+                      <i class="fa fa-arrow-circle-o-right" style="color: #2b96cc;" aria-hidden="true"><button type="button" class="btn" style="color: #2b96cc;" id="specialRules" onclick="ShowSpecialRules()" name="button">Special Rules</button></i>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container col-lg-6 " id="GlavniMeni2">
+    <div class="container">
+        <div class='row sm-flex-center'>
+            <div class="col-md-6 middle NewColorQUiz">
+              <p style="color: #2b96cc;font-size: 30px; margin-top: 70px;text-align: center;">Non Invasive</p>
+            </div>
+            <div class="col-md-6 ">
+                  <div class="Pitanje col-md-6" id="a1">
+                    <h4>Is device intended for channeling orbstoring blood, body fluids,<br /> cells or tissues, liquids or gases for the purpose of eventual infusion, administration or
+                        introduction into the body?</h4>
+                        <div class="MainButtons">
+                          <button type="button" class="btn btn2" style="font-size: 40px;" id="Odg1" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                          <button type="button" class="btn btn3" style="font-size: 40px;" id="Odg2" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button><br>
+                        </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="a1No">
+                    <h4>Is non-invasive device intended for modifying biological or chemical composition of human tissues or cells, blood , other body liquids or other liquids intended for implantation or
+                        administration into the body?</h4>
+                        <div class="MainButtons">
+                          <button type="button" class="btn btn2" id="Odg3" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                          <button type="button" class="btn btn3" id="Odg4" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                        </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack" style="float: left" id="Back" onclick="BackButton()" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="a1Yes">
+                    <h4>May device be conncected to a class IIa, class IIb or class III active device?</h4>
+                        <div class="MainButtons">
+                          <button type="button" class="btn btn2 " id="Odg5" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                          <button type="button" class="btn btn3 " id="Odg6" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                        </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" id="Back" onclick="BackButton1()" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="a2No">
+                    <h4>Is product a blood bag?</h4>
+                        <div class="MainButtons">
+                          <button type="button" class="btn btn2 " id="Odg7" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                          <button type="button" class="btn btn3 " id="Odg8" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                        </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" onclick="BackButton3()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn  btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="a2Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIa Rule 2.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BackButton2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="a3No">
+                    <h4>Is device intended for chanelling or storing blood liquids or for storing organs, parts of organs or body cells and tissues?</h4>
+                      <div class="MainButtons">
+                        <button type="button" class="btn btn2 " id="Odg9" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                        <button type="button" class="btn btn3 " id="Odg10" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                      </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" onclick="BackButton5()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="a3Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIb Rule 2.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BackButton4()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="a4No">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class I Rule 2.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant info@qualitycert.ba</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BackButton6()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="a4Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIa Rule 2.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BackButton7()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="a5No">
+                    <h4>Is it a device which comes into contact with injured skin or mucous membrane? </h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odg13" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odg14" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" onclick="BackButton8()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="a5Yes">
+                    <h4>Is device intended to be used for treatment, which consists of filtration , centrifugation or exchanges of gas?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odg11" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odg12" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" onclick="BackButton9()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="a6Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIa Rule 3.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BackButton10()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="a6No">
+                    <h4>Is device consisting of a substance or a mixture of substances intended to be used IN VITRO in direct contact with human cells, tissues or organs taken form the human body or used IN VITRO with human embroys before their implantation or administration into the body?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odg15" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odg16" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" onclick="BackButton11()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="a7Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class III Rule 3.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BackButton12()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="a7No">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIb Rule 3.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BackButton13()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="a8No">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class I Rule 1. </h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BackButton14()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu"  onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="a8Yes">
+                    <h4>Is device intended to be used as a mechanical barrier, for compression or for absorption of exudates?</h4>
+                      <div class="MainButtons">
+                        <button type="button" class="btn btn2 " id="Odg17" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                        <button type="button" class="btn btn3 " id="Odg18" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                      </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" onclick="BackButton15()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu " onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="a9Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class I Rule 4..</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BackButton16()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="a9No">
+                    <h4>Is devices intended to be used principally for skin injuries which have breached the dermis or mucous membrane and can only heal by secondary intent?</h4>
+                      <div class="MainButtons">
+                        <button type="button" class="btn btn2 " id="Odg19" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                        <button type="button" class="btn btn3 " id="Odg20" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                      </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" onclick="BackButton17()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu " onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="a10Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIb Rule 4.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BackButton18()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu " onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="a10No">
+                    <h4>Is device principally intended to manage the micro-environment of injured skin or mucous membrane? </h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odg21" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odg22" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" onclick="BackButton19()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu " onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="a11Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIa Rule 4. </h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BackButton20()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu " onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="a11No">
+                    <h4>In other case all non-invasive devices which come into contact with injured skin or mucous membrane are classified to Class IIa Rule 4</h4>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BackButton21()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu " onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+            </div>
+        </div>
+  </div>
+    </div>
+
+    <!-- Invasive Quiz -->
+
+    <div class="container col-lg-6 " id="GlavniMeni3">
+    <div class="container">
+        <div class='row sm-flex-center'>
+            <div class="col-md-6 middle NewColorQUiz">
+              <p style="color: #2b96cc;font-size: 30px; margin-top: 70px;text-align: center;">Invasive</p>
+            </div>
+            <div class="col-md-6 ">
+                  <div class="Pitanje col-md-6" id="b1">
+                    <h4>Is it an invasive device with respect to body orificies a surgically invasive device ?</h4>
+                        <div class="MainButtons">
+                          <button type="button" class="btn btn2" style="font-size: 40px;" id="Odgovor1" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                          <button type="button" class="btn btn3" style="font-size: 40px;" id="Odgovor2" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button><br>
+                        </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b1No">
+                    <h4>Is it a surgically invasive device intended for transient use?</h4>
+                        <div class="MainButtons">
+                          <button type="button" class="btn btn2" id="Odgovor3" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                          <button type="button" class="btn btn3" id="Odgovor4" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                        </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack" style="float: left" id="Back" onclick="BB()" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b1Yes">
+                    <h4>Is it an invasive device with respect to body orifices, other than surgically invasive device, intended to be connected to an active device?</h4>
+                        <div class="MainButtons">
+                          <button type="button" class="btn btn2 " id="Odgovor5" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                          <button type="button" class="btn btn3 " id="Odgovor6" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                        </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" id="Back" onclick="BB1()" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b2No">
+                    <h4>Is it a device, which is intended to administer medicinal products by means of a delivery system? </h4>
+                        <div class="MainButtons">
+                          <button type="button" class="btn btn2 " id="Odgovor7" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                          <button type="button" class="btn btn3 " id="Odgovor8" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                        </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" onclick="BB3()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn  btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b2Yes">
+                    <h4>Is it a device, which is intended for use in direct contact with the heart and central circulatory system? </h4>
+                        <div class="MainButtons">
+                          <button type="button" class="btn btn2 " id="Odgovor9" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                          <button type="button" class="btn btn3 " id="Odgovor10" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                        </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b3No">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIa Rule 6.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB4()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+
+                  <div class="Pitanje col-md-6" id="b3Yes">
+                    <h4>Is it a device, which is intended specifically for control, diagnose, monitor or correct a defect of the heart or central circulatory system? </h4>
+                        <div class="MainButtons">
+                          <button type="button" class="btn btn2 " id="Odgovor11" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                          <button type="button" class="btn btn3 " id="Odgovor12" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                        </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB5()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b4No">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class III Rule 6.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB6()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b4Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class III Rule 6.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB7()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b5No">
+                    <h4>Back to the Start </h4>
+
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB8()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b5Yes">
+                    <h4>Is it an invasive device with respect to body orifices, other than surgically invasive device, intended to be connected to a class I active device? <hr> Is such device intended for transient use (< 60 min)? </h4>
+                        <div class="MainButtons">
+                          <button type="button" class="btn btn2 " id="Odgovor13" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                          <button type="button" class="btn btn3 " id="Odgovor14" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                        </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB9()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b6No">
+                    <h4>Is such device intended for short-term use (60 min < use time < 30 day) ? </h4>
+                        <div class="MainButtons">
+                          <button type="button" class="btn btn2 " id="Odgovor15" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                          <button type="button" class="btn btn3 " id="Odgovor16" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                        </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB10()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b6Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class I Rule 5.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB11()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b7No">
+                    <h4>Is such device intended for long-term use (>30 day)?</h4>
+                        <div class="MainButtons">
+                          <button type="button" class="btn btn2 " id="Odgovor17" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                          <button type="button" class="btn btn3 " id="Odgovor18" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                        </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB12()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b7Yes">
+                    <h4>Is a device intended to be used in:</h4>
+                    <ul class="Pitanje" style="font-size: 10px">
+                      <li>the oral cavity as far as the pharynx, or</li>
+                      <li>an ear canal up to the eardrum, or</li>
+                      <li>the nasal cavity?</li>
+                    </ul>
+                        <div class="MainButtons">
+                          <button type="button" class="btn btn2 " id="Odgovor19" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                          <button type="button" class="btn btn3 " id="Odgovor20" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                        </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB13()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b8No">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class I Rule 5.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB14()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b8Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIa Rule 5.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB15()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b10No">
+                    <h4>Is it an invasive device with respect to body orifices, other than surgically invasive device, intended for connection to a class IIa, class IIb or class III active device?</h4>
+                        <div class="MainButtons">
+                          <button type="button" class="btn btn2 " id="Odgovor21" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                          <button type="button" class="btn btn3 " id="Odgovor22" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                        </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB16()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b10Yes">
+                    <h4>Is a device intended to be used in:</h4>
+                    <ul class="Pitanje" style="font-size: 10px">
+                      <li>the oral cavity as far as the pharynx, or</li>
+                      <li>an ear canal up to the eardrum, or</li>
+                      <li>the nasal cavity;</li>
+                    </ul>
+                    <h4>and not liable to be absorbed by the mucous membrane?</h4>
+                        <div class="MainButtons">
+                          <button type="button" class="btn btn2 " id="Odgovor23" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                          <button type="button" class="btn btn3 " id="Odgovor24" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                        </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB17()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b11No">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIb Rule 5.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB18()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b11Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIa Rule 5.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB19()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b12Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIa Rule 5.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB20()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b13No">
+                    <h4>Is it reusable surgical instrument? </h4>
+                        <div class="MainButtons">
+                          <button type="button" class="btn btn2 " id="Odgovor25" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                          <button type="button" class="btn btn3 " id="Odgovor26" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                        </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB21()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b13Yes">
+                    <h4>Is such administration of a medicinal product is done in a manner that is potentially hazardous, taking account of the mode of application?</h4>
+                        <div class="MainButtons">
+                          <button type="button" class="btn btn2 " id="Odgovor27" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                          <button type="button" class="btn btn3 " id="Odgovor28" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                        </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB22()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b14Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class III Rule 6.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB23()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b15No">
+                    <h4>Is it a device which is intended specifically for use in direct contact with the heart or central circulatory system or the central nervous system?</h4>
+                        <div class="MainButtons">
+                          <button type="button" class="btn btn2 " id="Odgovor29" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                          <button type="button" class="btn btn3 " id="Odgovor30" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                        </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB24()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b15Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class I Rule 6.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB25()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b16No">
+                    <h4>Is it a device which is intended to supply energy in the form of ionising radiation?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odgovor31" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odgovor32" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB26()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b16Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class III Rule 6.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB27()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b17No">
+                    <h4>Is it a device which has a biological effect or it can be wholly or mainly absorbed?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odgovor33" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odgovor34" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB28()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b17Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIb Rule 6.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB29()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b18No">
+                    <h4>Is it a surgically invasive device intended for shortterm use (60 min < use time < 30 days)?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odgovor35" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odgovor36" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB30()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b18Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIb Rule 6.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB31()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b19No">
+                    <h4>Is it a device, which is intended for use in direct contact with the heart and central circulatory system?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odgovor37" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odgovor38" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB32()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b19Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIb Rule 7.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB33()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b20No">
+                    <h4>Is it a device which is intended specifically for use in direct contact with the heart or central circulatory system or the central nervous system?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odgovor39" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odgovor40" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB34()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b20Yes">
+                    <h4>Is it a device, which is intended specifically for control, diagnose, monitor or correct a defect of the heart or central circulatory system?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odgovor41" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odgovor42" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB35()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b21No">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class III Rule 7.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB36()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b21Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class III Rule 7.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB37()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b22No">
+                    <h4>Is it a device which is intended to supply energy in the form of ionizing radiation?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odgovor43" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odgovor44" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB38()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b22Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class III Rule 7.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB39()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b23No">
+                    <h4>Is it a device which has a biological effect or it can be wholly or mainly absorbed?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odgovor45" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odgovor46" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB40()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b23Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class III Rule 7.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB41()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b24No">
+                    <h4>Is it a device which is intended to administer medicines?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odgovor47" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odgovor48" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB42()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b24Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class III Rule 7.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB43()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b25No">
+                    <h4>Is a device intended to be placed in the teeth?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odgovor49" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odgovor50" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB44()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b25Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIb Rule 7.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB45()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b26No">
+                    <h4>Is a device intended to undergo chemical change in the body?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odgovor51" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odgovor52" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB46()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b26Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIa Rule 7.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB47()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b27No">
+                    <h4>Is it an implantable device and long-term (>30days) surgically invasive device?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odgovor53" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odgovor54" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB48()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b27Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIb Rule 7.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB49()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b28No">
+                    <h4>Is it an invasive device that comes into contact with injured mucous membrane?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odgovor55" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odgovor56" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB50()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b28Yes">
+                    <h4>Is it a device which is intended to be placed in the teeth?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odgovor57" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odgovor58" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB51()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b29No">
+                    <h4>Is device intended to be used in direct contact with the heart, the central circulatory system or the central nervous system?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odgovor59" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odgovor60" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB52()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b29Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIa Rule 8.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB53()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b30No">
+                    <h4>Is it a device which has a biological effect or it can be wholly or mainly absorbed?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odgovor61" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odgovor62" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB54()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b30Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class III Rule 8.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB55()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b31No">
+                    <h4>Is a device intended to be placed in the teeth?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odgovor63" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odgovor64" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b31Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class III Rule 8.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b32Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIb Rule 8.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b32No">
+                    <h4>Is a device intended to undergo chemical change in the body?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odgovor65" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odgovor66" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b33No">
+                    <h4>Is it a device which is intended to administer medicinal products?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odgovor67" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odgovor68" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b33Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIb Rule 8.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b34No">
+                    <h4>Is it an active implantable device or its accessories? </h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odgovor69" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odgovor70" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b35No">
+                    <h4>Is it a breast implants or surgical meshes?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odgovor71" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odgovor72" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b35Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class III Rule 8.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b36No">
+                    <h4>Is it a device which is intendent to be used as a total or partial joint replacement, with the exception of ancillary components such as screws, wedges, plates and instruments?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odgovor73" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odgovor74" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b36Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class III Rule 8.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b37No">
+                    <h4>Is it an implantable device that come into contact with the spinal column (with the exception of components such as screws, wedges, plates and instruments)?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odgovor75" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odgovor76" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b37Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class III Rule 8.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b38No">
+                    <h4>Is it a device, which is intended to be used as a spinal disc replacement implants?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odgovor77" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odgovor78" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b38Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class III Rule 8.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b39Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIb Rule 8.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b39No">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class III Rule 8.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b40No">
+                    <i class="fa fa-arrow-circle-o-right" style="color: #2b96cc;" aria-hidden="true"><button type="button" class="btn" style="color: #2b96cc;" id="NonInvasive" onclick="ShowNonInvasive()" name="button">Non Invasive</button></i>
+                    <i class="fa fa-arrow-circle-o-right" style="color: #2b96cc;" aria-hidden="true"><button type="button" class="btn" style="color: #2b96cc;"id="activeDevices" onclick="ShowActiveDevices()" name="button">Active Devices</button></i>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b40Yes">
+                    <h4>Is a device principally intended to manage the micro-environment of injured skin or mucous membrane?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odgovor79" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odgovor80" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b41No">
+                    <h4>Is a device intended to be used principally for skin injuries, which have breached the dermis or mucous membrane and can only heal by secondary intent?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odgovor81" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odgovor82" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b41Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIa Rule 4.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b42No">
+                    <h4>Is a device intended to be used as a mechanical barrier, for compression or for absorption of exudates?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Odgovor83" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Odgovor84" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b42Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIb Rule 4.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b43No">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIa Rule 4.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="b43Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class I Rule 4.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="BB2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+            </div>
+        </div>
+  </div>
+    </div>
+
+    <!-- Active Devices Quiz -->
+
+    <div class="container col-lg-6 " id="GlavniMeni4">
+    <div class="container">
+        <div class='row sm-flex-center'>
+            <div class="col-md-6 middle NewColorQUiz">
+              <p style="color: #2b96cc;font-size: 30px; margin-top: 70px;text-align: center;">Active Devices</p>
+            </div>
+            <div class="col-md-6 ">
+                  <div class="Pitanje col-md-6" id="c1">
+                    <h4>Is device intended for channeling orbstoring blood, body fluids,<br /> cells or tissues, liquids or gases for the purpose of eventual infusion, administration or
+                        introduction into the body?</h4>
+                        <div class="MainButtons">
+                          <button type="button" class="btn btn2" style="font-size: 40px;" id="Answer1" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                          <button type="button" class="btn btn3" style="font-size: 40px;" id="Answer2" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button><br>
+                        </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="c1No">
+                    <h4>Is non-invasive device intended for modifying biological or chemical composition of human tissues or cells, blood , other body liquids or other liquids intended for implantation or
+                        administration into the body?</h4>
+                        <div class="MainButtons">
+                          <button type="button" class="btn btn2" id="Answer3" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                          <button type="button" class="btn btn3" id="Answer4" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                        </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack" style="float: left" id="Back" onclick="Back()" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="c1Yes">
+                    <h4>May device be conncected to a class IIa, class IIb or class III active device?</h4>
+                        <div class="MainButtons">
+                          <button type="button" class="btn btn2 " id="Answer5" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                          <button type="button" class="btn btn3 " id="Answer6" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                        </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" id="Back" onclick="Back1()" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="c2No">
+                    <h4>Is product a blood bag?</h4>
+                        <div class="MainButtons">
+                          <button type="button" class="btn btn2 " id="Answer7" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                          <button type="button" class="btn btn3 " id="Answer8" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                        </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" onclick="Back3()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn  btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="c2Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIa Rule 2.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="Back2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="c3No">
+                    <h4>Is device intended for chanelling or storing blood liquids or for storing organs, parts of organs or body cells and tissues?</h4>
+                      <div class="MainButtons">
+                        <button type="button" class="btn btn2 " id="Answer9" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                        <button type="button" class="btn btn3 " id="Answer10" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                      </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" onclick="Back5()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="c3Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIb Rule 2.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="Back4()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="c4No">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class I Rule 2.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant info@qualitycert.ba</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="Back6()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="c4Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIa Rule 2.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="Back7()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="c5No">
+                    <h4>Is it a device which comes into contact with injured skin or mucous membrane? </h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Answer13" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Answer14" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" onclick="Back8()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="c5Yes">
+                    <h4>Is device intended to be used for treatment, which consists of filtration , centrifugation or exchanges of gas?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Answer11" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Answer12" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" onclick="Back9()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="c6Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIa Rule 3.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="Back10()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="c6No">
+                    <h4>Is device consisting of a substance or a mixture of substances intended to be used IN VITRO in direct contact with human cells, tissues or organs taken form the human body or used IN VITRO with human embroys before their implantation or administration into the body?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Answer15" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Answer16" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" onclick="Back11()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="c7Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class III Rule 3.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="Back12()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="c7No">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIb Rule 3.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="Back13()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="c8No">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class I Rule 1. </h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="Back14()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu"  onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="c8Yes">
+                    <h4>Is device intended to be used as a mechanical barrier, for compression or for absorption of exudates?</h4>
+                      <div class="MainButtons">
+                        <button type="button" class="btn btn2 " id="Answer17" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                        <button type="button" class="btn btn3 " id="Answer18" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                      </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" onclick="Back15()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu " onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="c9Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class I Rule 4..</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="Back16()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="c9No">
+                    <h4>Is devices intended to be used principally for skin injuries which have breached the dermis or mucous membrane and can only heal by secondary intent?</h4>
+                      <div class="MainButtons">
+                        <button type="button" class="btn btn2 " id="Answer19" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                        <button type="button" class="btn btn3 " id="Answer20" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                      </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" onclick="Back17()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu " onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="c10Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIb Rule 4.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="Back18()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu " onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="c10No">
+                    <h4>Is device principally intended to manage the micro-environment of injured skin or mucous membrane? </h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Answer21" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Answer22" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" onclick="Back19()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu " onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="c11Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIa Rule 4. </h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="Back20()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu " onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="c11No">
+                    <h4>In other case all non-invasive devices which come into contact with injured skin or mucous membrane are classified to Class IIa Rule 4</h4>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="Back21()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu " onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+            </div>
+        </div>
+  </div>
+    </div>
+
+
+    <!-- Special Rules Quiz -->
+
+    <div class="container col-lg-6 " id="GlavniMeni5">
+    <div class="container">
+        <div class='row sm-flex-center'>
+            <div class="col-md-6 middle NewColorQUiz">
+              <p style="color: #2b96cc;font-size: 30px; margin-top: 70px;text-align: center;">Special Rules</p>
+            </div>
+            <div class="col-md-6 ">
+                  <div class="Pitanje col-md-6" id="d1">
+                    <h4>Is device intended for channeling orbstoring blood, body fluids,<br /> cells or tissues, liquids or gases for the purpose of eventual infusion, administration or
+                        introduction into the body?</h4>
+                        <div class="MainButtons">
+                          <button type="button" class="btn btn2" style="font-size: 40px;" id="Ansr1" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                          <button type="button" class="btn btn3" style="font-size: 40px;" id="Ansr2" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button><br>
+                        </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="d1No">
+                    <h4>Is non-invasive device intended for modifying biological or chemical composition of human tissues or cells, blood , other body liquids or other liquids intended for implantation or
+                        administration into the body?</h4>
+                        <div class="MainButtons">
+                          <button type="button" class="btn btn2" id="Ansr3" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                          <button type="button" class="btn btn3" id="Ansr4" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                        </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack" style="float: left" id="Back" onclick="B()" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="d1Yes">
+                    <h4>May device be conncected to a class IIa, class IIb or class III active device?</h4>
+                        <div class="MainButtons">
+                          <button type="button" class="btn btn2 " id="Ansr5" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                          <button type="button" class="btn btn3 " id="Ansr6" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                        </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" id="Back" onclick="B1()" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="d2No">
+                    <h4>Is product a blood bag?</h4>
+                        <div class="MainButtons">
+                          <button type="button" class="btn btn2 " id="Ansr7" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                          <button type="button" class="btn btn3 " id="Ansr8" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                        </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" onclick="B3()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn  btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="d2Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIa Rule 2.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4" onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="B2()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="d3No">
+                    <h4>Is device intended for chanelling or storing blood liquids or for storing organs, parts of organs or body cells and tissues?</h4>
+                      <div class="MainButtons">
+                        <button type="button" class="btn btn2 " id="Ansr9" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                        <button type="button" class="btn btn3 " id="Ansr10" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                      </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" onclick="B5()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="d3Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIb Rule 2.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="B4()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="d4No">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class I Rule 2.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant info@qualitycert.ba</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="B6()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="d4Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIa Rule 2.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="B7()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="d5No">
+                    <h4>Is it a device which comes into contact with injured skin or mucous membrane? </h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Ansr3" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Ansr4" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" onclick="B8()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="d5Yes">
+                    <h4>Is device intended to be used for treatment, which consists of filtration , centrifugation or exchanges of gas?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Ansr11" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Ansr12" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" onclick="B9()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="d6Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIa Rule 3.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="B10()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="d6No">
+                    <h4>Is device consisting of a substance or a mixture of substances intended to be used IN VITRO in direct contact with human cells, tissues or organs taken form the human body or used IN VITRO with human embroys before their implantation or administration into the body?</h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Ansr15" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Ansr16" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" onclick="B11()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="d7Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class III Rule 3.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="B12()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="d7No">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIb Rule 3.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="B13()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="d8No">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class I Rule 1. </h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="B14()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu"  onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="d8Yes">
+                    <h4>Is device intended to be used as a mechanical barrier, for compression or for absorption of exudates?</h4>
+                      <div class="MainButtons">
+                        <button type="button" class="btn btn2 " id="Ansr17" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                        <button type="button" class="btn btn3 " id="Ansr18" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                      </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" onclick="B15()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu " onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="d9Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class I Rule 4..</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="B16()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu" onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="d9No">
+                    <h4>Is devices intended to be used principally for skin injuries which have breached the dermis or mucous membrane and can only heal by secondary intent?</h4>
+                      <div class="MainButtons">
+                        <button type="button" class="btn btn2 " id="Ansr19" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                        <button type="button" class="btn btn3 " id="Ansr20" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                      </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" onclick="B17()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu " onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="d10Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIb Rule 4.</h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="B18()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu " onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="d10No">
+                    <h4>Is device principally intended to manage the micro-environment of injured skin or mucous membrane? </h4>
+                    <div class="MainButtons">
+                      <button type="button" class="btn btn2 " id="Ansr21" name="button"><img class="hideplease" src="./YesButton.svg" style="height: 40px;" alt=""></button>
+                      <button type="button" class="btn btn3 " id="Ansr22" name="button"><img class="hideplease1" src="./NoButton.svg" style="height: 40px;" alt=""></button>
+                    </div>
+                        <div class="NewButtons">
+                          <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnBack " style="float: left" onclick="B19()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                          <button type="button" class="btn btnMenu " onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                        </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="d11Yes">
+                    <p class="SmallerSize">The application has been succesfully submitted! Device resides within.</p>
+                    <h4 class="KrajQuiza">Class IIa Rule 4. </h4>
+                    <p class="SmallerSize">For additional information contact the consultant</p>
+                    <p class="Boldirat">info@qualitycert.ba +387 35 304 677</p>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="B20()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu " onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+
+                  <div class="Pitanje col-md-6" id="d11No">
+                    <h4>In other case all non-invasive devices which come into contact with injured skin or mucous membrane are classified to Class IIa Rule 4</h4>
+                    <div class="NewButtons">
+                      <button type="button" class="btn btn4 " onclick="Reset()" id="Reset" name="button"><img class="hideplease3" src="./Refresh.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnBack " style="float: left" onclick="B21()" id="Back" name="button"><img class="hidepleaseBack" src="./BackBtn.svg" style="height: 20px;" alt=""></button>
+                      <button type="button" class="btn btnMenu " onclick="ShowMenu()" id="Menu" name="button"><img class="hidepleaseMenu" src="./Menu.svg" style="height: 20px;" alt=""></button>
+                    </div>
+                  </div>
+            </div>
+        </div>
+  </div>
+    </div>
+
+
+  </body>
+
+  <script type="text/javascript" src="index.js"></script>
+
+</html>
